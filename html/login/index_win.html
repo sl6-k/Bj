@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>不纠</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <link rel="stylesheet" href="../../css/aui.css">
+    <link rel="stylesheet" href="../../css/aui.2.0-override.css">
+
+  </head>
+  <body id="body">
+    <div id="wrap" class="flex-wrap flex-vertical">
+  		<header class="aui-bar aui-bar-nav aui-bar-theme" id="aui-header">
+  			<a class="aui-pull-left" tapmode onclick="closeWin();">
+  			</a>
+  			<div class="aui-title">不纠</div>
+  		</header>
+  	</div>
+  </body>
+  <script src="../../js/api.js" charset="utf-8"></script>
+  <script src="../../js/common.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  apiready = function() {
+      //解析元素 tapmode 属性，优化点击事件处理
+      api.parseTapmode();
+      //适配系统状态栏，为传入的DOM元素增加20px的上内边距
+      SetstatusBarStyle();
+      /*加载忘记密码frame*/
+      api.openFrame({
+        name: 'loginIndex_frm',
+        url: 'index_frm.html',
+        bounces: true,
+        scrollToTop: true,
+        vScrollBarEnabled: true,
+        softInputBarEnabled: false,
+        rect: {
+          x: 0,
+          y: $api.dom('#aui-header').offsetHeight,
+          w: 'auto',
+          h: $api.dom('#wrap').offsetHeight - $api.dom('#aui-header').offsetHeight
+        }
+      });
+    }
+  </script>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>用户首页</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <style media="screen">
+      body,html{
+        /*font-size: 50px;*/
+      }
+      .wrap{
+        width: 80%;
+        margin: 1.8rem auto;
+      }
+      .p1{
+        font-size: .8rem;
+        line-height: 1rem;
+        color: rgba(0, 255, 0, 0.5);
+      }
+      .p2{
+        line-height: .4rem;
+        font-size: .3rem;
+        color: #ffb12a;
+      }
+      .btn{
+        display: block;
+        margin: 1rem auto;
+        font-size: .6rem;
+        color: white;
+        background: rgba(0, 100, 100, 0.5);
+        padding: .2rem .4rem;
+        border-radius: .3rem;
+      }
+      .p3{
+        display: block;
+        text-align: center;
+        font-size: .35rem;
+        color: black;
+        opacity: 0.4;
+        margin-top: .2rem;
+      }
+      .appWrap{
+          width: 80%;
+          height: 4rem;
+          position: fixed;
+          bottom: 1rem;
+      }
+      .imgWrapper{
+        display: flex;
+      }
+      .imgWrap{
+        flex: 33%;
+      }
+      .img{
+        width: 1rem;
+        height: 1rem;
+        display: block;
+        margin: 1rem auto 0;
+      }
+      .imgP{
+        display: block;
+        width: 100%;
+        font-size: .3rem;
+        text-align: center;
+        margin-top: .2rem;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <div class="wrap">
+      <p class="p1">欢迎你！</p>
+      <p class="p2">从此人生不纠结~~</p>
+      <button class="btn" onclick="" type="button" name="button">账户登陆</button>
+      <button class="btn" onclick="" type="button" name="button">游客使用</button>
+      <div class="appWrap">
+        <p class="p3">也可使用以下账号直接登陆</p>
+        <div class="imgWrapper">
+          <div class="imgWrap" onclick="openQQLogin();">
+            <img class="img" src="../../image/login/qq.png" alt="">
+            <p class="imgP">QQ</p>
+          </div>
+          <div class="imgWrap" onclick="openWeiboLogin();">
+            <img class="img" src="../../image/login/weibo.png" alt="">
+            <p class="imgP">微博</p>
+          </div>
+          <div class="imgWrap" onclick="openWeixinLogin();">
+            <img class="img" src="../../image/login/weixin.png" alt="">
+            <p class="imgP">微信</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../js/api.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    apiready = function(){
+      // var frmWidth = api.frameWidth;
+      // var frmHeight = api.frameHeight;
+      // $api.byId('body').style.width = frmWidth;
+      // $api.byId('body').style.height = frmHeight;
+
+    }
+    function openQQLogin(){
+      alert("111");
+    }
+    function openWeiboLogin(){
+      alert("222");
+    }
+    function openWeixinLogin(){
+      alert("333");
+    }
+  </script>
+</html>

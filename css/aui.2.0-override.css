@@ -1,0 +1,446 @@
+/*
+ * =========================================================================
+ * APIClud - AUI UI 框架    JoeJackson  QQ：289395845  weiChat:JOE_QZJ
+ * Verson aui.2.0-override
+ * =========================================================================
+ */
+@charset "UTF-8";
+/*主框架*/
+html, body {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 100%;
+	margin: 0;
+}
+.flex-wrap {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.flex-con {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	/*兼容iOS系统，frame页面超出部分适应*/
+	background-color: #f5f5f5;
+}
+.flex-vertical {
+	-webkit-box-orient: vertical;
+	-webkit-flex-flow: column;
+	flex-flow: column;
+}
+#wrap {
+	height: 100%;
+}
+[v-cloak] {
+display: none;
+}
+/*文字、背景颜色*/
+.aui-text-theme{
+	color: #f15a24 !important;
+}
+.aui-text-default {
+	color: #666 !important;
+}
+.aui-text-black {
+	color: #000 !important;
+}
+.aui-text-gray {
+	color: #555 !important;
+}
+.aui-text-white {
+	color: #FFF !important;
+}
+.aui-text-green {
+	color: #35b81e !important;
+}
+.aui-text-blue {
+	color: #03a9f4 !important;
+}
+.aui-text-orange {
+	color: #f90 !important;
+}
+.aui-bg-theme {
+	background: #FFFFFF !important;
+}
+.aui-bar-theme {
+	background:#FFFFFF !important;
+	color: #FFFFFF !important;
+}
+.aui-bar-white {
+	background:#fff !important;
+	color: #333 !important;
+}
+.aui-padded-15 {
+	padding: 0.75rem !important;
+}
+.aui-label-theme{
+	background: #f15a24;
+	color: #fff;
+}
+.aui-label-outlined-square {
+	border: 1px solid #f15a24;
+	background-color: transparent;
+}
+.aui-label-outlined {
+	border: 1px solid #f15a24;
+	background-color: transparent;
+	border-radius: 20px;
+}
+.aui-list-header{
+	background-color: #ececec !important;
+}
+.aui-text-center{
+	text-align:center !important;
+}
+.aui-margin-b-20{
+	margin-bottom: 1.25rem !important;
+}
+.aui-radio:checked, .aui-radio.aui-checked, .aui-checkbox:checked, .aui-checkbox.aui-checked {
+    background-color: #f15a24;
+    border: solid 1px #f15a24;
+    text-align: center;
+    background-clip: padding-box;
+}
+.aui-tab-item.aui-active {
+    color: #f15a24;
+    border-bottom: 2px solid #f15a24;
+    /*z-index: 100;*/
+}
+.aui-height-100{
+	height: 100% !important;
+}
+.aui-width-100{
+	width: 100% !important;
+}
+.aui-100{
+	width: 100% !important;
+	height: 100% !important;
+}
+/*数据为空图片提示*/
+.aui-img-content-null{
+	width: 4rem;height: 4rem;
+	margin:4rem auto 0.5rem;
+	overflow: hidden;
+}
+.aui-img-content-null img{width: 100%;}
+/*去边框线*/
+.aui-list{background-image:none;}
+.aui-list .aui-list-item:last-child{
+	background-image:none;
+}
+.aui-list:before {
+	height: 0px;
+	background-color: #FFFFFF;
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: auto;
+	bottom: auto;
+	width: 100%;
+	z-index: 2;
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	pointer-events: none;
+}
+.aui-list:after {
+	height: 1px;
+	background-color: transparent;
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: auto;
+	bottom: auto;
+	width: 100%;
+	z-index: 2;
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	pointer-events: none;
+}
+/*内边距*/
+.aui-padded-t-3 {
+	padding-top: 0.15rem !important;
+}
+.aui-padded-b-2 {
+	padding-top: 0.05rem !important;
+}
+.aui-list:after {
+ height: 0 !important;
+ background-color: #FFFFFF !important;
+ }
+/*导航栏*/
+.aui-bar-transparent {
+	color: #FFFFFF;
+	background-color: transparent;
+}
+.aui-bar-white {
+	color: #333333;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #E8E9EA;
+}
+.aui-bar-white .aui-btn {
+	color: #333333;
+}
+.aui-bar-white .aui-btn .aui-iconfont {
+	color: #000;
+}
+.aui-bar-black {
+	color: #FFFFFF;
+	background-color: #000000;
+}
+.aui-bar-theme {
+	color: #FFF;
+	background-color: #f15a24;
+	height: 50px;line-height: 50px;
+	border-bottom: 1px solid #f2f2f2;
+}
+.aui-bar-theme .aui-btn .aui-iconfont {
+	color: #000;
+}
+.aui-bar-theme .aui-title{
+	color: #000;
+	font-size: 0.9rem;height: 50px; line-height: 50px;
+	bottom: 0px;
+}
+.aui-bar-theme .aui-pull-left{
+	color: #000;
+	font-size: 0.9rem;height: 50px; line-height: 50px;
+	bottom: 0px;
+}
+.aui-bar-theme .aui-pull-right{
+	color: #000;
+	font-size: 0.9rem;height: 50px; line-height: 50px;
+	bottom: 0px;
+}
+/*按钮样式*/
+.aui-btn-black {
+	color: #FFFFFF;
+	background-color: #000000;
+}
+.aui-btn-black.aui-active, .aui-btn-black:active {
+	color: #666666;
+	background-color: #000000;
+}
+.aui-btn-theme
+{
+	background-color: #f15a24 !important;
+	color: #FFFFFF !important;
+}
+.aui-btn-theme.aui-active, .aui-btn-theme:active {
+	color: #ffffff !important;
+	background-color: #f15a24 !important;
+}
+.aui-btn-theme.aui-btn-outlined
+{
+	background-color: transparent !important;
+	color: #f15a24 !important;
+	border: 1px solid #f15a24;
+}
+.aui-btn-green{
+	background-color: #35b81e !important;
+	color: #FFFFFF !important;
+}
+.aui-btn-block.aui-btn-sm {
+		 padding: 0.6rem 0;
+		font-size: 0.8rem;
+}
+/*内外边距类*/
+.aui-margin-t-20 {
+	margin-top: 1rem !important;
+}
+/*列表*/
+.aui-content > .aui-list-view:last-child {
+  	margin-bottom: 15px;
+}
+.aui-list-view {
+	position: relative;
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 15px;
+	list-style: none;
+	background-color: #fff;
+}
+.aui-list-view:after {
+  	border-top: 1px solid #c8c7cc;
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-transform-origin: 0 0;
+	-webkit-transform: scale(1);
+	pointer-events: none;
+}
+.aui-list-view-cell {
+	position: relative;
+	padding: 12px 15px;
+	overflow: hidden;
+	-webkit-transform-style: preserve-3d;
+	      transform-style: preserve-3d;
+	-webkit-touch-callout: none;
+}
+.aui-list-view-cell:after {
+	border-bottom: 1px solid #c8c7cc;
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-transform-origin: 0 0;
+	-webkit-transform: scale(1);
+	pointer-events: none;
+}
+
+.aui-list-view-cell:last-child:after {
+  	border-bottom: 1px solid #c8c7cc;
+}
+.aui-list-view-cell > a{
+  	position: relative;
+  	padding: inherit;
+  	margin: -12px -15px;
+  	display: block;
+  	overflow: hidden;
+  	color: inherit;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+.aui-list-view-cell > a:active{
+	background: #f4f4f4;
+}
+.aui-list-view-cell > a.aui-active{
+  	background-color: #eee;
+}
+.aui-list-view-cell > a.aui-ellipsis-1,
+.aui-list-view-cell > a.aui-ellipsis-2  {
+	padding-bottom: -4px;
+	padding-right: 30px;
+}
+.aui-list-view-cell p {
+  	margin-bottom: 0;
+}
+
+.aui-list-view.aui-in .aui-list-view-cell:last-child:after {
+  	left:0;
+}
+.aui-list-view.aui-in .aui-list-view-cell:after {
+	left: 15px;
+}
+.aui-list-view i.aui-iconfont {
+    padding: 5px;
+    border-radius: 4px;
+    margin-right: 10px;
+    color: #000;
+    font-size: 1.125em;
+}
+/*列表页角标靠右*/
+.aui-list-view-cell > .aui-badge,
+.aui-list-view-cell > a > .aui-badge {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	-webkit-transform: translateY(-50%);
+	      transform: translateY(-50%);
+}
+.aui-list-view-cell > a.aui-arrow-right > .aui-badge,
+.aui-list-view-cell > div.aui-arrow-right > .aui-badge {
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	-webkit-transform: translateY(-50%);
+	      transform: translateY(-50%);
+}
+/*带有箭头的列表*/
+.aui-arrow-right:after {
+	content: '';
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    margin-top: -0.2rem;
+    background: transparent;
+    border: 1px solid #dddddd;
+    border-top: none;
+    border-right: none;
+    z-index: 2;
+    -webkit-border-radius: 0;
+            border-radius: 0;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+}
+/*通知*/
+.aui-notice {
+	height: 400px;
+	position: relative;
+	margin: 0;
+	width: 100%;
+	z-index: 99;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	text-align: center;
+	display: block;
+}
+.aui-notice > img {
+	margin-bottom: 20px;
+	font-size: 32px;
+	line-height: 44px;
+	display: block;
+	color: #bbb;
+	font-size: 50px;
+	width: 80px;
+	line-height: 80px;
+}
+.aui-notice p {
+	font-size: 16px;
+	line-height: 20px;
+	color: #999999;
+	text-align: center;
+	padding: 0 15px;
+}
+.aui-notice-btn {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	padding: 50px 15px 15px;
+}
+/*加载中*/
+.aui-loading-wrap {
+	font-size: 12px;
+	color: #999;
+	text-align: center;
+	padding: 20px 15px 15px;
+	display: block;
+	overflow: hidden;
+}
+.aui-loading-wrap.show{
+	display:block;
+}
+.aui-loading-wrap.hide{
+	display:none;
+}
+.aui-loading-wrap img {
+	width: 25px;
+}
+/*aui ul li列表最小高度*/
+.aui-list .aui-list-item{
+	min-height:50px;
+}
+
+.aui-bar-nav .aui-iconfont{
+	color:#000;
+}
+
+/*搜索框中的取消按钮*/
+.aui-searchbar-cancel{
+	font-size:14px;
+}

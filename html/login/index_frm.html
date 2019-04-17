@@ -30,6 +30,7 @@
         background: rgba(0, 100, 100, 0.5);
         padding: .2rem .4rem;
         border-radius: .3rem;
+        outline: none;
       }
       .p3{
         display: block;
@@ -66,11 +67,11 @@
       }
     </style>
   </head>
-  <body id="body">
+  <body>
     <div class="wrap">
       <p class="p1">欢迎你！</p>
       <p class="p2">从此人生不纠结~~</p>
-      <button class="btn" onclick="" type="button" name="button">账户登陆</button>
+      <button class="btn" onclick="login();" type="button" name="button">账户登陆</button>
       <button class="btn" onclick="" type="button" name="button">游客使用</button>
       <div class="appWrap">
         <p class="p3">也可使用以下账号直接登陆</p>
@@ -98,6 +99,18 @@
       // var frmHeight = api.frameHeight;
       // $api.byId('body').style.width = frmWidth;
       // $api.byId('body').style.height = frmHeight;
+
+    }
+    function login(){
+      api.openWin({
+          name: 'login_Win',
+          url: './login_win.html',
+          animation: {
+            type: 'movein',
+            subType: 'from_right',
+            duration: 300
+          },
+      });
 
     }
     function openQQLogin(){

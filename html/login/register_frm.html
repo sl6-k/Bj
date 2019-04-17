@@ -177,7 +177,7 @@
 	renderCode(createVCode());
   function codeBol(){
     var val = document.getElementById('code').value;
-    if(val == stringDataCode){
+    if(val.toLowerCase() == stringDataCode.toLowerCase()){
       return true;
     }else {
       return false;

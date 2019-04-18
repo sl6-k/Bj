@@ -4,84 +4,10 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="../../css/api.css">
-    <style media="screen">
-      body{
-        position: relative;
-      }
-      .wrap{
-        width: 80%;
-        margin: 1.8rem auto;
-      }
-      .p1{
-        font-size: .8rem;
-        line-height: 1rem;
-        color: rgba(0, 255, 0, 0.5);
-      }
-      .p2{
-        line-height: .4rem;
-        font-size: .3rem;
-        color: #ffb12a;
-      }
-      .iconWrap{
-        width: 100%;
-        height: 1rem;
-        margin: .8rem auto .4rem;
-        border: 1px solid #8a8a8a;
-        border-radius: .2rem;
-        overflow: hidden;
-        display: flex;
-        position: relative;
-      }
-      .iconImg{
-        width: .5rem;
-        height: .5rem;
-        margin: .25rem .4rem;
-      }
-      .input{
-        flex: 1;
-        height: .6rem;
-        margin: .2rem 0;
-        font-size: .32rem;
-        outline:none;
-      }
-      #canvas{
-        width: 100px;
-        height: 40px;
-        position: absolute;
-        top: .1rem;
-        right: .2rem;
-      }
-      .subSeekBackPwdInfo{
-        display: block;
-        width: 80%;
-        margin: 0 auto;
-        height: 1rem;
-        font-size: .4rem;
-        margin-top: .3rem;
-        text-align: center;
-        background: #00bcd4;
-        border-radius: .1rem;
-        color: white;
-      }
-      .login{
-        position: absolute;
-        display: inline-block;
-        background: #00bcd4;
-        font-size: .32rem;
-        width: 1.6rem;
-        text-align: center;
-        color: white;
-        border-radius: .25rem;
-        height: .5rem;
-        line-height: .5rem;
-        opacity: 0.4;
-        right: .4rem;
-        top: -.2rem;
-      }
-    </style>
+    <link rel="stylesheet" href="../../css/indexLogin.css">
   </head>
   <body>
-    <span class="login" onclick="api.closeWin();">去登陆></span>
+    <span class="shiftRight" onclick="api.closeWin();">去登陆></span>
     <div class="wrap">
       <p class="p1">欢迎你！</p>
       <p class="p2">从此人生不纠结~~</p>
@@ -102,11 +28,12 @@
         <input type="text" placeholder="请输入验证码" name="" class="input" id="code" value="">
         <canvas id="canvas" onclick="renderCode(createVCode());"></canvas>
       </div>
-      <input type="button" onlick="subSeekBackPwdInfo();" class="subSeekBackPwdInfo" name="" value="确　　认">
+      <input type="button" onlick="subSeekBackPwdInfo();" class="trueBtn" name="" value="确　　认">
     </div>
   </body>
   <script src="../../js/api.js" charset="utf-8"></script>
   <script src="../../js/common.js" charset="utf-8"></script>
+  <script src="../../js/vertifyCode.js" charset="utf-8"></script>
   <script type="text/javascript">
     var inputS = document.getElementsByClassName('input');
     for (let i = 0; i < inputS.length; i++) {
@@ -115,66 +42,7 @@
       }
     }
     var stringDataCode;
-  	function createVCode(){
-  		 var codeString = '0,1,2,3,4,5,6,7,8,9';
-  		 codeString += 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z';
-  		 codeString += 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z';
-  		 var codeArr = codeString.split(',');
-  		 var codeData = [];
-  		 var codeLength = 0;
-  		 while (codeLength < 4){
-  		 	codeLength = Math.ceil(Math.random()*5);
-  		 }
-  		 for (let i = 0;i<codeLength;i++) {
-  		 	codeData.push(codeArr[randomNum(0,59)]);
-  		 }
-  		 stringDataCode = codeData.join("");
-  		 return codeData;
-  	}
-  	function randomNum(min,max){
-  		return Math.floor(Math.random()*(max-min)+min);
-  	}
-  	function randomColor(min,max){
-  		var r= randomNum(min,max);
-  		var g= randomNum(min,max);
-  		var b= randomNum(min,max);
-  		return 'rgb('+r+','+g+','+b+')';
-  	}
-  	function renderCode(codeData){
-  		var canvas = document.getElementById("canvas");
-  		var width = canvas.width;
-  		var height = canvas.height;
-  		var ctx = canvas.getContext('2d');
-  		ctx.fillStyle = randomColor(180,240);
-  		ctx.fillRect(0,0,width,height);
-  		ctx.textBaseline = 'bottom';
-  		for (let i=0;i<codeData.length;i++) {
-  			ctx.fillStyle = randomColor(30,100);
-  			ctx.font = 'bold '+randomNum(44,72)	+ 'px Arail';
-  			var x = 20 +i * 55;
-  			var y = randomNum(80,100);
-  			var deg = randomNum(-20,20);
-  			ctx.translate(x,y);
-  			ctx.rotate(deg * Math.PI / 180);
-  			ctx.fillText(codeData[i],0,0);
-  			ctx.rotate(-deg*Math.PI/180);
-  			ctx.translate(-x,-y);
-  		}
-  		for (let j =0;j<5;j++) {
-  			ctx.strokeStyle = randomColor(40,80);
-  			ctx.beginPath();
-  			ctx.moveTo(randomNum(0,width),randomNum(0,height));
-  			ctx.lineTo(randomNum(0,width),randomNum(0,height));
-  			ctx.stroke();
-  		}
-  		for (let k=0;k<100;k++) {
-  			ctx.fillStyle = randomColor(0.255);
-  			ctx.beginPath();
-  			ctx.arc(randomNum(0,width),randomNum(0,height),1,0,2*Math.PI);
-  			ctx.fill();
-  		}
-  	}
-  	renderCode(createVCode());
+    renderCode(createVCode(stringDataCode));
     function codeBol(){
       var val = document.getElementById('code').value;
       if(val == stringDataCode){

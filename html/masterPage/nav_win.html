@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../css/api.css">
+    <title></title>
+    <style media="screen">
+      #nav_bottom{
+        position: fixed;
+        display: flex;
+        bottom: 0;
+        width: 100%;
+        height: 1rem;
+      }
+      .imgWrap{
+        flex: 2;
+        box-sizing: border-box;
+        height: 100%;
+      }
+      .img{
+        width: 80%;
+        display: block;
+        height: 100%;
+        line-height: 1.2rem;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+      <div id="app">
+        <div id="nav_bottom" class="navWrap">
+          <div v-for="(value,key) of nav" class="imgWrap">
+            <img :src="value.show?value.img2:value.img1" @click="shiftFrame(key)" class="img" alt="">
+          </div>
+        </div>
+      </div>
+  </body>
+  <script src="../../js/api.js" charset="utf-8"></script>
+  <script src="../../js/vue.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    apiready = function(){
+
+    }
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        nav:[{
+          show: true,
+          img1:'../../image/nav_icon/news.png',
+          img2:'../../image/nav_icon/newsSelection.png'
+        },{
+          show: false,
+          img1:'../../image/nav_icon/square.png',
+          img2:'../../image/nav_icon/squareSelection.png'
+        },{
+          show: false,
+          img1:'../../image/nav_icon/release.png',
+          img2:'../../image/nav_icon/releaseSelection.png'
+        },{
+          show: false,
+          img1:'../../image/nav_icon/shop.png',
+          img2:'../../image/nav_icon/shopSelection.png'
+        },{
+          show: false,
+          img1:'../../image/nav_icon/me.png',
+          img2:'../../image/nav_icon/meSelection.png'
+        },],
+        pageNum: 0
+      },
+      methods:{
+        //切换tab
+        shiftFrame: function(key){
+          this.pageNum = key;
+          for (var i = 0; i < this.nav.length; i++) {
+            if(i!=key){
+              this.nav[i].show=false;
+            }else {
+              this.nav[i].show=true;
+            }
+          }
+        }
+      },
+      watch:{
+        //监听tab切换
+        pageNum:function(){
+          switch (this.pageNum) {
+            case 0:alert('0')
+
+              break;
+            case 1:alert('1')
+
+              break;
+            case 2:alert('2')
+
+              break;
+            case 3:alert('3')
+
+              break;
+            case 4:alert('4')
+
+              break;
+          }
+        }
+      }
+    })
+  </script>
+</html>

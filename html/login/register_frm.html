@@ -36,14 +36,10 @@
   <script src="../../js/common.js" charset="utf-8"></script>
   <script src="../../js/vertifyCode.js" charset="utf-8"></script>
   <script type="text/javascript">
-    var inputS = document.getElementsByClassName('input');
-    for (let i = 0; i < inputS.length; i++) {
-      inputS[i].onfocus = function(){
-        this.style.borderColor = 'white'
-      }
-    }
+    //生成图形验证码
     var stringDataCode;
   	renderCode(createVCode(stringDataCode));
+    //判断验证码是否输入正确
     function codeBol(){
       var val = document.getElementById('code').value;
       if(val == stringDataCode){
@@ -52,6 +48,7 @@
         return false;
       }
     }
+    //注册方法
     function subRegisterInfo(){
 
     }

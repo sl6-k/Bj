@@ -27,21 +27,17 @@
       <div style="width: 20%;height: .4rem;margin-left: 80%;">
         <p style="font-size: .24rem;" onclick="openSeekBackPwd();">忘记密码？</p>
       </div>
-      <input type="button" onlick="subLoginInfo();" class="trueBtn" name="" value="登　　陆">
+      <button type="button" onclick="subLoginInfo();" class="trueBtn" name="button">登　　陆</button>
     </div>
   </body>
   <script src="../../js/api.js" charset="utf-8"></script>
   <script src="../../js/common.js" charset="utf-8"></script>
   <script src="../../js/vertifyCode.js" charset="utf-8"></script>
   <script type="text/javascript">
-    var inputS = document.getElementsByClassName('input');
-    for (let i = 0; i < inputS.length; i++) {
-      inputS[i].onfocus = function(){
-        this.style.borderColor = 'white'
-      }
-    }
+    //图形验证码
     var stringDataCode;
     renderCode(createVCode(stringDataCode));
+    //判断验证码是否正确
     function codeBol(){
       var val = document.getElementById('code').value;
       if(val == stringDataCode){
@@ -50,10 +46,7 @@
         return false;
       }
     }
-    function subLoginInfo(){
-      var user = document.getElementById('user').value;
-      var pwd = document.getElementById('pwd').value;
-    }
+    //打开注册页面
     function openRegister(){
       api.openWin({
           name: 'register_win',
@@ -65,6 +58,7 @@
           },
       });
     }
+    //打开更改密码页面
     function openSeekBackPwd(){
       api.openWin({
           name: 'seekBackPwd_win',
@@ -75,6 +69,19 @@
             duration: 300
           },
       });
+    }
+    //登陆成功
+    function subLoginInfo() {
+      api.openWin({
+          name: 'nav_frm',
+          url: '../masterPage/nav_win.html',
+          animation: {
+            type: 'movein',
+            subType: 'from_right',
+            duration: 300
+          },
+      });
+
     }
   </script>
 </html>

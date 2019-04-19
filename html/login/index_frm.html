@@ -4,67 +4,8 @@
     <meta charset="utf-8">
     <title>用户首页</title>
     <link rel="stylesheet" href="../../css/api.css">
+    <link rel="stylesheet" href="../../css/login_index.css">
     <style media="screen">
-      body,html{
-        /*font-size: 50px;*/
-      }
-      .wrap{
-        width: 80%;
-        margin: 1.8rem auto;
-      }
-      .p1{
-        font-size: .8rem;
-        line-height: 1rem;
-        color: rgba(0, 255, 0, 0.5);
-      }
-      .p2{
-        line-height: .4rem;
-        font-size: .3rem;
-        color: #ffb12a;
-      }
-      .btn{
-        display: block;
-        margin: 1rem auto;
-        font-size: .6rem;
-        color: white;
-        background: rgba(0, 100, 100, 0.5);
-        padding: .2rem .4rem;
-        border-radius: .3rem;
-        outline: none;
-      }
-      .p3{
-        display: block;
-        text-align: center;
-        font-size: .35rem;
-        color: black;
-        opacity: 0.4;
-        margin-top: .2rem;
-      }
-      .appWrap{
-          width: 80%;
-          height: 4rem;
-          position: fixed;
-          bottom: 1rem;
-      }
-      .imgWrapper{
-        display: flex;
-      }
-      .imgWrap{
-        flex: 33%;
-      }
-      .img{
-        width: 1rem;
-        height: 1rem;
-        display: block;
-        margin: 1rem auto 0;
-      }
-      .imgP{
-        display: block;
-        width: 100%;
-        font-size: .3rem;
-        text-align: center;
-        margin-top: .2rem;
-      }
     </style>
   </head>
   <body>
@@ -99,8 +40,8 @@
       // var frmHeight = api.frameHeight;
       // $api.byId('body').style.width = frmWidth;
       // $api.byId('body').style.height = frmHeight;
-
     }
+    //打开账号登陆页面
     function login(){
       api.openWin({
           name: 'login_Win',
@@ -111,14 +52,16 @@
             duration: 300
           },
       });
-
     }
+    //qq登陆
     function openQQLogin(){
       alert("111");
     }
+    //微博登陆
     function openWeiboLogin(){
       alert("222");
     }
+    //微信登陆
     function openWeixinLogin(){
       alert("333");
     }
